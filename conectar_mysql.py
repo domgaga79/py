@@ -7,10 +7,10 @@ mydb = mysql.connector.connect(
     database= "bd_python"
 )
 
-
 print (mydb)
 
-#mydb = mysql.execute("SELECT * FROM admin")
+mycursor = mydb.cursor()
+mycursor.execute("SELECT * FROM admin")
 
-#for x in rows(mydb):
-#    print(x)
+for x in mycursor:
+  print(x)
